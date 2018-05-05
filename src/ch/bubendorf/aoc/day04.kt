@@ -521,7 +521,7 @@ fun main(args : Array<String>) {
 
     val validPhrases1 = input.split("\n")
             .filter {it.matches(".*\\w.*".toRegex())} // Erlaube nur Phrasen welche mindestens ein Wort enthalten
-            .filterNot { it.matches(".*(\\w+).*\\b\\1\\b.*".toRegex()) } // Erlaube keine Phrasen in denen das gleiche Wort mehrmals vorkommt
+            .filterNot { it.matches(".*(\\b\\w+\\b).*\\b\\1\\b.*".toRegex()) } // Erlaube keine Phrasen in denen das gleiche Wort mehrmals vorkommt
 
     println("Teil 1: Anzahl gültige Phrasen: ${validPhrases1.size}")
 
@@ -532,7 +532,7 @@ fun main(args : Array<String>) {
             .map{line -> line.split("\\s".toRegex()).map{ sortString(it)}.joinToString(" ")}
             .filter {it.matches(".*\\w.*".toRegex())} // Erlaube nur Phrasen welche mindestens ein Wort enthalten
 //            .map { text -> println(text);  text}
-            .filterNot { it.matches(".*(\\w+).*\\b\\1\\b.*".toRegex()) } // Erlaube keine Phrasen in denen das gleiche Wort mehrmals vorkommt
+            .filterNot { it.matches(".*(\\b\\w+\\b).*\\b\\1\\b.*".toRegex()) } // Erlaube keine Phrasen in denen das gleiche Wort mehrmals vorkommt
 
     println("Teil 2: Anzahl gültige Phrasen: ${validPhrases2.size}")
 }
