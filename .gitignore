@@ -27,3 +27,4 @@ hs_err_pid*
 .idea/workspace.xml
 out/production/AoC/META-INF/
 out/production/Day_01/META-INF/
+.idea/.name
